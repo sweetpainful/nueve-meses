@@ -115,12 +115,17 @@ section:nth-of-type(odd) .glass{border-color:rgba(255,126,182,.55)}section:nth-o
 #mus{position:fixed;right:.8rem;bottom:.8rem;z-index:60;display:flex;align-items:center;gap:.4rem;width:auto;height:auto;border-radius:999px;padding:.35rem .9rem;background:rgba(40,15,70,.82);border:1px solid var(--pink);box-shadow:none}
 #mus button{background:none;font-size:1.3rem}
 #vol{width:90px;accent-color:#ff7eb6}
+
+.gifwrap{text-align:center;padding:0 1rem;position:relative;z-index:1}
+.gifwrap img{max-width:min(280px,80%);margin:0 auto;border-radius:18px;border:3px solid var(--pink);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.2rem}
+.vids video{width:100%;max-height:70vh;border-radius:16px;border:3px solid var(--pink);background:#000}
 </style>
 </head>
 <body>
 <div id="intro"><div><h1>Para Dahlia 💖</h1><p>De Marcos, con todo mi amor. Sube el volumen.</p><button class="btn" id="entrar">Toca para entrar</button></div></div>
 <audio id="bg" preload="auto"></audio>
-<div id="mus"><button id="pp" aria-label="Pausar o reproducir">⏸️</button><button id="sig" aria-label="Siguiente canción">⏭️</button><span aria-hidden="true">🔉</span><input type="range" id="vol" min="0" max="1" step="0.01" value="0.15" aria-label="Volumen"></div>
+<div id="mus"><button id="pp" aria-label="Pausar o reproducir">▶️</button><button id="sig" aria-label="Siguiente canción">⏭️</button><span aria-hidden="true">🔉</span><input type="range" id="vol" min="0" max="1" step="0.01" value="0.15" aria-label="Volumen"></div>
 
 <header id="hero">
   <div class="cubes" id="cubes" aria-hidden="true"></div>
@@ -134,7 +139,7 @@ section:nth-of-type(odd) .glass{border-color:rgba(255,126,182,.55)}section:nth-o
       <div><b id="cm">0</b><span>minutos</span></div>
       <div><b id="cs">0</b><span>segundos</span></div>
     </div>
-    <a href="#momentos"><button class="btn">Mira lo que guardé para ti</button></a>
+    <a class="btn" href="#momentos" style="display:inline-block;text-decoration:none">Mira lo que guardé para ti</a>
   </div>
 </header>
 
@@ -221,7 +226,7 @@ section:nth-of-type(odd) .glass{border-color:rgba(255,126,182,.55)}section:nth-o
     <button class="btn" id="si">Sí, siempre 💖</button>
     <button class="btn" id="no">No</button>
   </div>
-  <p id="fin">Gracias por ser mi persona favorita. Te amo. 💖</p>
+  <div id="fin"><p>Gracias por ser mi persona favorita. Te amo. 💖</p><div class="vids" id="vids"></div></div>
 </section>
 
 <footer>De Marcos para Dahlia, con todo mi amor · 19 de noviembre de 2026</footer>
@@ -349,7 +354,7 @@ const els = HISTORIA.map(([f,t,d],i)=>{
 });
 
 // ---- Mensajes ----
-const BONITOS=["Contigo todo es más bonito, Dahlia.","Me encanta cómo te ríes.","Eres lo mejor que me pasó este año.","Gracias por quedarte conmigo, incluso cuando soy difícil.","Cuando pienso en ti, sonrío solo.","Cada que veo algo, te recuerdo.","Contigo aprendí que el hogar también puede ser una persona.","Si esto fuera un anime, tú serías la protagonista y yo el que corre a tu lado hasta el final.","Eres mi persona favorita en cualquier universo y siempre.","Quiero verte feliz, y si puedo ser parte de eso, ya gané.","Te elegiría en cada vida, en cada partida y en cada vida.","No importan los demás mientras esté contigo.","Te amo mucho, como no tienes idea, te amo Dahlia."];
+const BONITOS=["Contigo todo es más bonito, Dahlia.","Me encanta cómo te ríes.","Eres lo mejor que me pasó este año.","Gracias por quedarte conmigo, incluso cuando soy difícil.","Cuando pienso en ti, sonrío solo.","Cada que veo algo, te recuerdo.","Contigo aprendí que el hogar también puede ser una persona.","Si esto fuera un anime, tú serías la protagonista y yo el que corre a tu lado hasta el final.","Eres mi persona favorita en cualquier universo y siempre.","Quiero verte feliz, y si puedo ser parte de eso, ya gané.","Te elegiría en cada vida, en cada partida.","No importan los demás mientras esté contigo.","Te amo mucho, como no tienes idea, te amo Dahlia."];
 let ib=0,tw;
 function escribir(t){clearInterval(tw);let i=0;$("bub").textContent="";tw=setInterval(()=>{$("bub").textContent=t.slice(0,++i);if(i>=t.length)clearInterval(tw)},35)}
 $("bonito").onclick=()=>{escribir(BONITOS[ib++%BONITOS.length]);lluvia(6)};
@@ -387,19 +392,29 @@ $("sig").onclick=()=>{ic++;cargar()};
 $("vol").oninput=e=>{bg.volume=e.target.value};
 $("porque").onclick=()=>{$("porque").style.display="none";$("porque-txt").style.display="block";lluvia(10)};
 
+// ---- GIFs (máximo 8) y videos (máximo 4): pon tus archivos en /gifs y /videos ----
+const GIFS=["gifs/gif1.gif","gifs/gif2.gif","gifs/gif3.gif","gifs/gif4.gif","gifs/gif5.gif","gifs/gif6.gif","gifs/gif7.gif","gifs/gif8.gif"];
+["momentos","cancion","historia","mensajes","latido","cupones","suya","poemas"].forEach((id,i)=>{
+  const d=document.createElement("div");d.className="gifwrap";const im=new Image();im.alt="";
+  im.onload=()=>d.appendChild(im);im.src=GIFS[i];$(id).after(d);   // si el gif no existe, no se muestra nada
+});
+const VIDEOS=["videos/video1.mp4","videos/video2.mp4","videos/video3.mp4","videos/video4.mp4"];
+let bgWas=false;
+VIDEOS.forEach(src=>{
+  const v=document.createElement("video");v.controls=true;v.preload="metadata";v.setAttribute("playsinline","");v.src=src;
+  v.onerror=()=>v.remove();
+  v.onplay=()=>{if(!bg.paused){bgWas=true;bg.pause()}};
+  v.onpause=v.onended=()=>{if(bgWas&&![...document.querySelectorAll("#vids video")].some(x=>!x.paused)){bgWas=false;bg.play().catch(()=>{})}};
+  $("vids").appendChild(v);
+});
+
 // ---- Corazones y flores de fondo ----
 const FL=["💖","💗","💕","🌸","✨","💘","🦋","🌷"],fl=document.createElement("div");fl.className="fl";fl.setAttribute("aria-hidden","true");
 for(let i=0;i<22;i++){const e=document.createElement("span");e.textContent=FL[i%FL.length];e.style.cssText=`left:${Math.random()*100}%;font-size:${16+Math.random()*26}px;--d:${12+Math.random()*14}s;--l:-${Math.random()*20}s`;fl.appendChild(e)}
 document.body.prepend(fl);
 
 // ---- Poemas ----
-const POEMAS=["No prometo ser perfecto,
-prometo quedarme a intentarlo.
-Cada día un poquito mejor,
-cada día un poquito más tuyo.","Siete meses y un universo
-que me puso en tu camino.
-Si volviera a empezar,
-te elegiría igual, Dahlia, en cada destino."];
+const POEMAS=["Si el mundo se apagara de repente,\nyo buscaría tu voz entre la gente.\nPorque eres mi lugar seguro.","No prometo ser perfecto,\nprometo quedarme a intentarlo.\nCada día un poquito mejor,\ncada día un poquito más tuyo.","Siete meses y un universo\nque me puso en tu camino.\nSi volviera a empezar,\nte elegiría igual, Dahlia, en cada destino."];
 let ip=0;function poema(){$("poema").textContent=POEMAS[ip++%POEMAS.length]}
 poema();$("otro").onclick=poema;
 
