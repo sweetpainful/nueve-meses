@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9 meses contigo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#21113a;--ink2:#34205a;--lav:#b9a4ff;--pink:#ff7eb6;--butter:#ffe29a;--cloud:#fff7fb}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cloud);font-family:Fredoka,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--butter);outline-offset:3px}
+section{padding:5rem 1.25rem;max-width:1000px;margin:0 auto}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;margin-bottom:.4rem}
+.sub{color:var(--lav);margin-bottom:2.2rem;max-width:46ch}
+button{font:inherit;cursor:pointer;border:0}
+.btn{background:var(--pink);color:var(--ink);font-weight:700;padding:.8rem 1.6rem;border-radius:14px;box-shadow:0 5px 0 #c24f86;transition:transform .1s,box-shadow .1s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #c24f86}
+
+/* HERO */
+#hero{min-height:100svh;max-width:none;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 120%,#5a2f8f,var(--ink) 65%)}
+.cubes{position:absolute;inset:0;pointer-events:none}
+.cube{position:absolute;bottom:-60px;width:var(--s);height:var(--s);background:var(--c);border-radius:22%;opacity:.35;animation:up var(--d) linear infinite;animation-delay:var(--l)}
+@keyframes up{to{transform:translateY(-120vh) rotate(200deg)}}
+.hero-in{position:relative;padding:1rem}
+.nine{font-size:clamp(9rem,36vw,20rem);font-weight:700;line-height:.85;color:var(--pink);text-shadow:0 8px 0 #c24f86,0 0 70px rgba(255,126,182,.45);animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.05)}}
+.hero-in h1{font-size:clamp(1.6rem,6vw,2.8rem);margin-top:.8rem}
+.hero-in p{color:var(--lav)}
+.clock{display:flex;gap:.6rem;justify-content:center;margin:1.8rem 0;flex-wrap:wrap}
+.clock div{background:var(--ink2);border:2px solid var(--lav);border-radius:14px;padding:.5rem .9rem;min-width:76px}
+.clock b{display:block;font-size:1.8rem;color:var(--butter)}
+.clock span{font-size:.85rem;color:var(--lav)}
+
+/* GALERIA */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.6rem}
+.pol{background:var(--cloud);color:var(--ink);padding:.7rem .7rem 1rem;border-radius:6px;transform:rotate(var(--r));transition:transform .2s;box-shadow:0 10px 25px rgba(0,0,0,.35);text-align:left;width:100%}
+.pol:hover{transform:rotate(0) scale(1.04)}
+.pol img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:3px;background:#ddd}
+.pol span{display:block;font-family:Caveat,cursive;font-size:1.5rem;margin-top:.5rem;text-align:center;line-height:1.2}
+dialog{border:0;background:transparent;max-width:min(92vw,900px);padding:0;color:var(--cloud);text-align:center}
+dialog::backdrop{background:rgba(20,8,40,.88)}
+dialog img{max-height:78vh;margin:auto;border-radius:10px}
+dialog p{font-family:Caveat,cursive;font-size:1.8rem;margin:.6rem 0}
+
+/* LOGROS */
+.ach{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.card{background:var(--ink2);border:2px dashed var(--lav);border-radius:16px;padding:1.2rem;text-align:left;color:var(--cloud);min-height:130px;transition:background .3s,border-color .3s}
+.card .t{font-weight:700;font-size:1.15rem}
+.card .d{display:none;margin-top:.4rem;color:var(--butter)}
+.card.on{background:#4b2a80;border:2px solid var(--butter)}
+.card.on .d{display:block}
+.card.on .lock{display:none}
+.prog{margin-top:1.4rem;color:var(--lav)}
+
+/* CARTA */
+#carta{text-align:center}
+#sobre{font-size:5.5rem;background:none;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4));transition:transform .2s}
+#sobre:hover{transform:rotate(-6deg) scale(1.1)}
+#papel{display:none;background:var(--cloud);color:var(--ink);border-radius:8px;padding:2rem 1.6rem;max-width:620px;margin:1.5rem auto 0;text-align:left;font-family:Caveat,cursive;font-size:clamp(1.4rem,4.4vw,1.9rem);line-height:1.45;box-shadow:0 14px 40px rgba(0,0,0,.4);white-space:pre-wrap}
+
+/* PREGUNTA */
+#pregunta{text-align:center}
+.zona{position:relative;height:190px;margin-top:1.5rem}
+.zona button{position:absolute;top:60px}
+#si{left:calc(50% - 130px)}
+#no{left:calc(50% + 20px);background:var(--ink2);color:var(--cloud);box-shadow:0 5px 0 #120a22;transition:left .25s,top .25s}
+#fin{display:none;font-size:1.6rem;color:var(--butter);margin-top:1.5rem}
+.heart{position:fixed;top:-40px;pointer-events:none;z-index:50;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+footer{text-align:center;padding:2rem;color:var(--lav)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header id="hero">
+  <div class="cubes" id="cubes" aria-hidden="true"></div>
+  <div class="hero-in">
+    <div class="nine">9</div>
+    <h1>meses contigo, <span id="nombre">mi amor</span></h1>
+    <p>Desde el 19 de febrero de 2026</p>
+    <div class="clock" aria-live="off">
+      <div><b id="cd">0</b><span>días</span></div>
+      <div><b id="ch">0</b><span>horas</span></div>
+      <div><b id="cm">0</b><span>minutos</span></div>
+      <div><b id="cs">0</b><span>segundos</span></div>
+    </div>
+    <a href="#momentos"><button class="btn">Mira lo que guardé para ti</button></a>
+  </div>
+</header>
+
+<section id="momentos">
+  <h2>Nuestros momentos</h2>
+  <p class="sub">Toca una foto para verla grande.</p>
+  <div class="wall" id="wall"></div>
+</section>
+
+<section id="logros">
+  <h2>Logros desbloqueados</h2>
+  <p class="sub">Seis cosas que me hacen quererte más. Toca cada logro para desbloquearlo.</p>
+  <div class="ach" id="ach"></div>
+  <p class="prog" id="prog">0 de 6 desbloqueados</p>
+</section>
+
+<section id="carta">
+  <h2>Una carta para ti</h2>
+  <p class="sub" style="margin-inline:auto">Ábrela cuando estés tranquila.</p>
+  <button id="sobre" aria-label="Abrir la carta">💌</button>
+  <div id="papel"></div>
+</section>
+
+<section id="pregunta">
+  <h2>Una última pregunta</h2>
+  <p class="sub" style="margin-inline:auto">Con mucho cariño y sin presión.</p>
+  <h3 style="font-size:1.6rem">¿Quieres seguir sumando meses conmigo?</h3>
+  <div class="zona" id="zona">
+    <button class="btn" id="si">Sí, siempre 💖</button>
+    <button class="btn" id="no">No</button>
+  </div>
+  <p id="fin">Gracias por ser mi persona favorita. Te amo. 💖</p>
+</section>
+
+<footer>Hecho con amor para ti · 19 de noviembre de 2026</footer>
+
+<dialog id="lb"><img id="lbi" alt=""><p id="lbc"></p><button class="btn" onclick="lb.close()">Cerrar</button></dialog>
+
+<script>
+/* ====== EDITA AQUÍ ====== */
+const HER = "mi amor";                        // su nombre o apodo
+const ME  = "Tu nombre";                      // tu nombre (firma de la carta)
+const START = new Date(2026, 1, 19, 0, 0, 0); // 19 feb 2026 (el mes va de 0 a 11)
+
+// Agrega aquí las 2 fotos que faltan: pon los archivos en /images con estos nombres
+const FOTOS = [
+  {src:"images/foto1.png", cap:"Donde nos encontramos"},
+  {src:"images/foto2.png", cap:"Juntos hasta en el obby"},
+  {src:"images/foto3.png", cap:"Cuando ya no podemos más"},
+  {src:"images/foto4.png", cap:"Siesta a tu lado"},
+  {src:"images/foto5.jpg", cap:"Otro recuerdo contigo"},
+  {src:"images/foto6.jpg", cap:"Y uno más"}
+];
+
+const LOGROS = [
+  ["Mi mejor compañera de juego","Contigo hasta perder se siente como ganar."],
+  ["Sonrisa instantánea","Me basta ver tu nombre en la pantalla para que se me cambie el día."],
+  ["Paciencia nivel máximo","Gracias por aguantarme, por escucharme y por quedarte."],
+  ["Mi lugar tranquilo","Contigo todo se siente en calma, como una siesta."],
+  ["Hacemos equipo","No importa el mapa ni el reto: juntos salimos."],
+  ["9 meses y contando","Y quiero que este contador nunca llegue a su fin."]
+];
+
+const CARTA = `Para ${HER}:
+
+Hoy cumplimos 9 meses y quería regalarte algo hecho con mis manos, porque tú te mereces cosas hechas con cariño.
+
+Gracias por cada risa, por cada partida y por cada conversación a cualquier hora. Contigo hasta lo simple se vuelve especial.
+
+No sé qué nos espera, pero sé que quiero vivirlo contigo.
+
+Te amo muchísimo.
+
+Con todo mi corazón,
+${ME}`;
+/* ========================= */
+
+document.getElementById("nombre").textContent = HER;
+
+// Cubos flotantes (fondo del inicio)
+const cubes = document.getElementById("cubes"), cols = ["#ff7eb6","#b9a4ff","#ffe29a"];
+for (let i = 0; i < 16; i++) {
+  const c = document.createElement("i"); c.className = "cube";
+  c.style.cssText = `left:${Math.random()*100}%;--s:${20+Math.random()*40}px;--c:${cols[i%3]};--d:${9+Math.random()*10}s;--l:-${Math.random()*14}s`;
+  cubes.appendChild(c);
+}
+
+// Contador en vivo
+const $ = id => document.getElementById(id);
+function tick() {
+  let s = Math.max(0, Math.floor((Date.now() - START) / 1000));
+  $("cd").textContent = Math.floor(s / 86400);
+  $("ch").textContent = Math.floor(s % 86400 / 3600);
+  $("cm").textContent = Math.floor(s % 3600 / 60);
+  $("cs").textContent = s % 60;
+}
+tick(); setInterval(tick, 1000);
+
+// Galería + lightbox
+const wall = $("wall"), lb = $("lb");
+FOTOS.forEach((f, i) => {
+  const b = document.createElement("button"); b.className = "pol";
+  b.style.setProperty("--r", (i % 2 ? 2 : -2) * (1 + (i % 3) * .4) + "deg");
+  b.innerHTML = `<img src="${f.src}" alt="${f.cap}" loading="lazy"><span>${f.cap}</span>`;
+  b.querySelector("img").onerror = () => b.remove(); // si la foto no existe aún, se oculta
+  b.onclick = () => { $("lbi").src = f.src; $("lbi").alt = f.cap; $("lbc").textContent = f.cap; lb.showModal(); };
+  wall.appendChild(b);
+});
+lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+
+// Logros
+const ach = $("ach"); let abiertos = 0;
+LOGROS.forEach(([t, d]) => {
+  const c = document.createElement("button"); c.className = "card";
+  c.innerHTML = `<div class="t">🏆 ${t}</div><div class="lock" style="color:var(--lav)">Toca para desbloquear</div><div class="d">${d}</div>`;
+  c.onclick = () => {
+    if (c.classList.contains("on")) return;
+    c.classList.add("on"); abiertos++;
+    $("prog").textContent = abiertos === LOGROS.length ? "¡Todos desbloqueados! Y aún hay más. 💖" : `${abiertos} de ${LOGROS.length} desbloqueados`;
+    if (abiertos === LOGROS.length) lluvia(24);
+  };
+  ach.appendChild(c);
+});
+
+// Carta con efecto de escritura
+let escrito = false;
+$("sobre").onclick = () => {
+  if (escrito) return; escrito = true;
+  const p = $("papel"); p.style.display = "block"; let i = 0;
+  const w = setInterval(() => { p.textContent = CARTA.slice(0, ++i); if (i >= CARTA.length) clearInterval(w); }, 28);
+};
+
+// Pregunta: el "No" se escapa
+const no = $("no"), zona = $("zona");
+function huir() {
+  const mx = zona.clientWidth - no.offsetWidth, my = zona.clientHeight - no.offsetHeight;
+  no.style.left = Math.random() * mx + "px"; no.style.top = Math.random() * my + "px";
+}
+no.addEventListener("mouseenter", huir);
+no.addEventListener("touchstart", e => { e.preventDefault(); huir(); }, {passive:false});
+no.addEventListener("click", huir);
+$("si").onclick = () => { $("fin").style.display = "block"; no.style.display = "none"; lluvia(40); };
+
+// Lluvia de corazones
+function lluvia(n) {
+  for (let i = 0; i < n; i++) {
+    const h = document.createElement("div"); h.className = "heart";
+    h.textContent = ["💖","💗","💕","💘"][i % 4];
+    h.style.cssText += `left:${Math.random()*100}vw;font-size:${18+Math.random()*26}px;animation-duration:${3+Math.random()*3}s;animation-delay:${Math.random()*1.5}s`;
+    document.body.appendChild(h); setTimeout(() => h.remove(), 8000);
+  }
+}
+</script>
+</body>
+</html>
