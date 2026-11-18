@@ -188,7 +188,7 @@ section:nth-of-type(odd) .glass{border-color:rgba(255,126,182,.55)}section:nth-o
 
 <section id="suya" class="t-c">
   <h2>La canción que me recuerda a ti</h2>
-  <p class="sub" style="margin-inline:auto">Sé que te gusta. A mí poco a poco también, de tanto escucharla contigo. Ahora cada vez que suena, pienso en ti.</p>
+  <p class="sub" style="margin-inline:auto">Sé que te gusta. y me gusto poco a poco también, de tanto escucharla contigo. Ahora cada vez que suena, pienso en ti.</p>
   <div class="glass"><iframe class="yt" title="Canción en YouTube" src="https://www.youtube.com/embed/FyS5dAywkEo" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
 </section>
 
@@ -229,7 +229,7 @@ section:nth-of-type(odd) .glass{border-color:rgba(255,126,182,.55)}section:nth-o
   <div id="fin"><p>Gracias por ser mi persona favorita. Te amo. 💖</p><div class="vids" id="vids"></div></div>
 </section>
 
-<footer>De Marcos para Dahlia, con todo mi amor · 19 de noviembre de 2026</footer>
+<footer>De Marcos para Dahlia, con todo mi amor · 19/04/2026</footer>
 
 <dialog id="lb"><img id="lbi" alt=""><p id="lbc"></p><button class="btn" onclick="lb.close()">Cerrar</button></dialog>
 
@@ -242,27 +242,27 @@ const START = new Date(2026, 3, 19, 0, 0, 0); // 19 abril 2026: cuando se conoci
 // Agrega aquí las 2 fotos que faltan: pon los archivos en /images con estos nombres
 const FOTOS = [
   {src:"images/foto1.png", cap:"Donde nos encontramos"},
-  {src:"images/foto2.png", cap:"Juntos hasta en el obby"},
-  {src:"images/foto3.png", cap:"Cuando ya no podemos más"},
-  {src:"images/foto4.png", cap:"Siesta a tu lado"},
-  {src:"images/foto5.jpg", cap:"Otro recuerdo contigo"},
-  {src:"images/foto6.jpg", cap:"Y uno más"}
+  {src:"images/foto2.png", cap:"Cuando fui tu perro xd"},
+  {src:"images/foto3.png", cap:"Cuando te mataron jejeje"},
+  {src:"images/foto4.png", cap:"Cuando te dormiste en mi casa"},
+  {src:"images/foto5.jpg", cap:"Nosotros version minions"},
+  {src:"images/foto6.jpg", cap:"Tu dibujo, que me hizo muy feliz"}
 ];
 
 const LOGROS = [
   ["Mi mejor compañera de juego","Contigo hasta perder se siente como ganar."],
-  ["Sonrisa instantánea","Me basta ver tu nombre en la pantalla para que se me cambie el día."],
-  ["Paciencia nivel máximo","Gracias por aguantarme, por escucharme y por quedarte."],
+  ["Sonrisa instantánea","Me basta ver tu nombre,para que se me cambie el día."],
+  ["Paciencia nivel 67","Gracias por aguantarme, por escucharme y por quedarte."],
   ["Mi lugar tranquilo","Contigo todo se siente en calma, como una siesta."],
-  ["Hacemos equipo","No importa el mapa ni el reto: juntos salimos."],
+  ["Hacemos equipo valorantkook67","No importa el problema,juntos salimos."],
   ["7 meses y contando","Y quiero que este contador nunca llegue a su fin."]
 ];
 
 const CARTA = `Para ${HER}, mi niña bonita:
 
-Estamos cumpliendo 7 meses y quería regalarte algo hecho con mis manos, porque tú te mereces cosas hechas con cariño.
+Estamos cumpliendo 7 meses y quería regalarte algo hecho con corazon, porque tú te mereces cosas hechas con cariño.
 
-Gracias por cada risa, por cada partida y por cada conversación a cualquier hora. Contigo hasta lo simple se vuelve especial.
+Gracias por cada risa, por cada llamada, cada juego y por cada conversación a cualquier hora. Contigo hasta lo simple se vuelve especial.
 
 No sé qué nos espera, pero sé que quiero vivirlo contigo.
 
@@ -313,7 +313,7 @@ LOGROS.forEach(([t, d]) => {
   c.onclick = () => {
     if (c.classList.contains("on")) return;
     c.classList.add("on"); abiertos++;
-    $("prog").textContent = abiertos === LOGROS.length ? "¡Todos desbloqueados! Y aún hay más. 💖" : `${abiertos} de ${LOGROS.length} desbloqueados`;
+    $("prog").textContent = abiertos === LOGROS.length ? "¡Todos desbloqueados! 💖" : `${abiertos} de ${LOGROS.length} desbloqueados`;
     if (abiertos === LOGROS.length) lluvia(24);
   };
   ach.appendChild(c);
@@ -343,8 +343,8 @@ $("si").onclick = () => { $("fin").style.display = "block"; no.style.display = "
 const HOY = Date.now() < new Date(2026,10,19) ? "Mañana" : "Hoy";
 const HISTORIA = [
   ["19 de abril de 2026","Nos conocimos","Ese día empezó todo, aunque todavía no lo sabíamos."],
-  ["Duelos, risas y recuerdos","Lo que vivimos jugando","Aunque actualmente odio ese juego, gracias a él nos conocimos y estoy muy agradecido con el universo."],
-  ["19 de noviembre de 2026","7 meses",(HOY==="Mañana"?"❤️ 6 meses y 30 días. ¡Mañana cumplimos 7 meses! 🥹💕":"❤️ ¡Hoy cumplimos 7 meses! 🥹💕")]
+  ["Risas y recuerdos","Duelos","Aunque actualmente odio ese juego, gracias a él nos conocimos y estoy muy agradecido con el universo por conocerte."],
+  ["19 de noviembre de 2026","7 meses",(HOY==="Mañana"?"❤️ 6 meses y 30 días. ¡Mañana cumplimos 7 meses! 💕":"❤️ ¡Hoy cumplimos 7 meses! 💕")]
 ];
 const els = HISTORIA.map(([f,t,d],i)=>{
   const e=document.createElement("div"); e.style.cssText="cursor:pointer;display:"+(i?"none":"block");
@@ -354,7 +354,7 @@ const els = HISTORIA.map(([f,t,d],i)=>{
 });
 
 // ---- Mensajes ----
-const BONITOS=["Contigo todo es más bonito, Dahlia.","Me encanta cómo te ríes.","Eres lo mejor que me pasó este año.","Gracias por quedarte conmigo, incluso cuando soy difícil.","Cuando pienso en ti, sonrío solo.","Cada que veo algo, te recuerdo.","Contigo aprendí que el hogar también puede ser una persona.","Si esto fuera un anime, tú serías la protagonista y yo el que corre a tu lado hasta el final.","Eres mi persona favorita en cualquier universo y siempre.","Quiero verte feliz, y si puedo ser parte de eso, ya gané.","Te elegiría en cada vida, en cada partida.","No importan los demás mientras esté contigo.","Te amo mucho, como no tienes idea, te amo Dahlia."];
+const BONITOS=["Contigo todo es más bonito.","Me encanta cómo te ríes.","Eres lo mejor que me pasó en mi vida.","Gracias por quedarte conmigo, incluso cuando soy muy tonto.","Cuando pienso en ti, sonrío solo.","A donde sea que mire, hay algo que me recuerda a ti","Contigo entendí que la felicidad no siempre es un lugar al que llegar, a veces es una persona con quien quedarse.","Si esto fuera un anime, tú serías la protagonista y yo el que corre a tu lado hasta el final.","Eres mi persona favorita en cualquier universo y siempre.","Quiero verte feliz, y si puedo ser parte de eso, ya gané.","Te elegiría en cada decision y en cada vida.","No importan los demás mientras esté contigo.","Te amo mucho, como no tienes idea."];
 let ib=0,tw;
 function escribir(t){clearInterval(tw);let i=0;$("bub").textContent="";tw=setInterval(()=>{$("bub").textContent=t.slice(0,++i);if(i>=t.length)clearInterval(tw)},35)}
 $("bonito").onclick=()=>{escribir(BONITOS[ib++%BONITOS.length]);lluvia(6)};
@@ -371,7 +371,7 @@ $("corazon").onclick=()=>{te++;const n=Date.now();
   lastT=n};
 
 // ---- Cupones ----
-[["Un beso largo","válido en cualquier momento"],["Una noche de películas","tú eliges la peli"],["Una partida de lo que quieras","sin quejarme, lo prometo"],["Un regalo que tú elijas","y sí, lo voy a comprar 🎁"],["Un “te amo” extra","canjeable las veces que pidas"],["Una cita pendiente","yo organizo todo"]].forEach(([t,d])=>{
+[["Un besos infinitos","válido en cualquier momento"],["Una noche de películas","tú eliges la peli"],["Una partida de lo que quieras","sin quejarme, lo prometo"],["Un regalo que tú elijas","y sí, lo voy a comprar 🎁"],["Un “te amo” extra","canjeable las veces que pidas"],["Una cita pendiente","yo organizo todo"]].forEach(([t,d])=>{
   const b=document.createElement("button");b.innerHTML=`🎟️ ${t}<small>${d}</small>`;
   b.onclick=()=>{b.classList.toggle("used");if(b.classList.contains("used"))lluvia(8)};
   $("cup").appendChild(b);
