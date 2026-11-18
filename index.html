@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>9 meses contigo</title>
+<title>Dahlia · 7 meses contigo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#21113a;--ink2:#34205a;--lav:#b9a4ff;--pink:#ff7eb6;--butter:#ffe29a;--cloud:#fff7fb}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--cloud);font-family:Fredoka,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+body{background:linear-gradient(160deg,#21113a,#3a1d63 50%,#21113a) fixed;color:var(--cloud);font-family:Fredoka,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
 img{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--butter);outline-offset:3px}
 section{padding:5rem 1.25rem;max-width:1000px;margin:0 auto}
@@ -73,18 +73,63 @@ dialog p{font-family:Caveat,cursive;font-size:1.8rem;margin:.6rem 0}
 @keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
 footer{text-align:center;padding:2rem;color:var(--lav)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+.glass{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:1.3rem}
+.hero-in h1{background:linear-gradient(90deg,var(--butter),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tl{position:relative;padding-left:1.6rem;border-left:3px solid var(--pink)}
+.tl div{position:relative;margin-bottom:1.6rem}
+.tl div:before{content:"💗";position:absolute;left:-2.35rem;top:0;font-size:1.1rem}
+.tl b{color:var(--butter)}.tl small{display:block;color:var(--lav)}
+.bubble{min-height:5rem;font-family:Caveat,cursive;font-size:1.8rem;margin:1rem 0;color:var(--butter)}
+.row{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+.bar{height:20px;background:var(--ink);border-radius:20px;overflow:hidden;margin:1rem 0}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--butter));transition:width 1.4s}
+#corazon{font-size:6rem;background:none;transition:transform .08s;filter:drop-shadow(0 0 22px rgba(255,126,182,.6))}
+#corazon:active{transform:scale(1.25)}
+.cup{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.cup button{background:var(--butter);color:var(--ink);border-radius:14px;padding:1rem;text-align:left;border:2px dashed var(--ink);font-weight:600;position:relative}
+.cup button.used{opacity:.55;filter:grayscale(.6)}
+.cup button.used:after{content:"CANJEADO 💖";position:absolute;right:.6rem;top:.6rem;font-size:.8rem;border:2px solid #c24f86;color:#c24f86;padding:0 .4rem;border-radius:6px;transform:rotate(8deg)}
+.cup small{display:block;font-weight:400}
+.t-c{text-align:center}
+
+.card .t{display:none}.card.on .t{display:block}.card.on .lock{display:none}
+#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;padding:1.5rem;background:radial-gradient(ellipse at 50% 100%,#5a2f8f,var(--ink) 70%)}
+#intro h1{font-size:clamp(2rem,8vw,3.4rem);margin-bottom:.4rem}#intro p{color:var(--lav);margin-bottom:1.6rem}
+#mus{position:fixed;right:1rem;bottom:1rem;z-index:60;width:52px;height:52px;border-radius:50%;font-size:1.4rem;background:var(--pink);box-shadow:0 4px 0 #c24f86}
+.yt{aspect-ratio:16/9;width:100%;border:0;border-radius:14px}
+.poema{font-family:Caveat,cursive;font-size:clamp(1.5rem,4.6vw,2rem);line-height:1.4;white-space:pre-line;min-height:9rem;color:var(--butter)}
+.carta-enojo{font-size:1.1rem;max-width:56ch;margin:0 auto}
+
+body{background:linear-gradient(160deg,#2a1150,#5a1f80 30%,#a02a74 60%,#3b1d7a 85%,#2a1150) fixed}
+section,footer{position:relative;z-index:1}
+h2{background:linear-gradient(90deg,#ffe29a,#ff7eb6,#b9a4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2:before{content:"💗 "}h2:after{content:" 💗"}
+.btn{background:linear-gradient(90deg,#ff7eb6,#ffb36b)}
+section:nth-of-type(odd) .glass{border-color:rgba(255,126,182,.55)}section:nth-of-type(even) .glass{border-color:rgba(185,164,255,.6)}
+.pol:nth-child(3n+1){background:#ffe1ef}.pol:nth-child(3n+2){background:#e4dcff}.pol:nth-child(3n){background:#d7f3ff}
+.cup button:nth-child(3n+1){background:#ffe29a}.cup button:nth-child(3n+2){background:#ffc2de}.cup button:nth-child(3n){background:#cfe9ff}
+.card.on:nth-child(3n+1){background:#7a2f9e}.card.on:nth-child(3n+2){background:#a02a74}.card.on:nth-child(3n){background:#2f4fa0}
+.fl{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}.fl span{position:absolute;bottom:-40px;opacity:.55;animation:up var(--d) linear infinite;animation-delay:var(--l)}
+#corazon:disabled{opacity:.6;cursor:default}
+#mus{position:fixed;right:.8rem;bottom:.8rem;z-index:60;display:flex;align-items:center;gap:.4rem;width:auto;height:auto;border-radius:999px;padding:.35rem .9rem;background:rgba(40,15,70,.82);border:1px solid var(--pink);box-shadow:none}
+#mus button{background:none;font-size:1.3rem}
+#vol{width:90px;accent-color:#ff7eb6}
 </style>
 </head>
 <body>
+<div id="intro"><div><h1>Para Dahlia 💖</h1><p>De Marcos, con todo mi amor. Sube el volumen.</p><button class="btn" id="entrar">Toca para entrar</button></div></div>
+<audio id="bg" preload="auto"></audio>
+<div id="mus"><button id="pp" aria-label="Pausar o reproducir">⏸️</button><button id="sig" aria-label="Siguiente canción">⏭️</button><span aria-hidden="true">🔉</span><input type="range" id="vol" min="0" max="1" step="0.01" value="0.15" aria-label="Volumen"></div>
 
 <header id="hero">
   <div class="cubes" id="cubes" aria-hidden="true"></div>
   <div class="hero-in">
-    <div class="nine">9</div>
+    <div class="nine">7</div>
     <h1>meses contigo, <span id="nombre">mi amor</span></h1>
-    <p>Desde el 19 de febrero de 2026</p>
+    <p>De Marcos para ti · nos conocimos el 19 de abril de 2026</p>
     <div class="clock" aria-live="off">
-      <div><b id="cd">0</b><span>días</span></div>
+      <div><b id="cd">0</b><span>días juntos</span></div>
       <div><b id="ch">0</b><span>horas</span></div>
       <div><b id="cm">0</b><span>minutos</span></div>
       <div><b id="cs">0</b><span>segundos</span></div>
@@ -99,16 +144,71 @@ footer{text-align:center;padding:2rem;color:var(--lav)}
   <div class="wall" id="wall"></div>
 </section>
 
+
+<section id="cancion" class="t-c">
+  <h2>Nuestra canción</h2>
+  <p class="sub" style="margin-inline:auto">Dale play aquí. Antes baja o pausa la música de fondo con el reproductor de abajo.</p>
+  <div class="glass"><iframe title="Nuestra canción en Spotify" src="https://open.spotify.com/embed/track/71lpxN8I3Idkq3xp5DDJX0?si=8f44d39cb7a54d9f" width="100%" height="152" style="border:0;border-radius:14px" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+  <p style="margin-top:1rem"><a class="btn" style="display:inline-block;text-decoration:none" href="https://open.spotify.com/intl-es/track/71lpxN8I3Idkq3xp5DDJX0?si=8f44d39cb7a54d9f" target="_blank" rel="noopener">Abrir en Spotify</a></p>
+</section>
+
+<section id="historia">
+  <h2>Nuestra historia</h2>
+  <p class="sub">Toca cada momento para que te cuente algo.</p>
+  <div class="tl glass" id="tl"></div>
+</section>
+
+<section id="mensajes" class="t-c">
+  <h2>Cosas que quiero decirte</h2>
+  <p class="sub" style="margin-inline:auto">Toca el botón las veces que quieras.</p>
+  <div class="glass">
+    <div class="bubble" id="bub">Dahlia…</div>
+    <div class="row"><button class="btn" id="bonito">Dime algo bonito</button><button class="btn" id="cuanto">¿Cuánto te amo?</button></div>
+    <div class="bar"><i id="barra"></i></div><p id="bartxt" style="color:var(--lav)"></p>
+  </div>
+</section>
+
+<section id="latido" class="t-c">
+  <h2>Toca mi corazón</h2>
+  <p class="sub" style="margin-inline:auto">Cada toque es un “te amo” de mi parte.</p>
+  <button id="corazon" aria-label="Enviar un te amo">💖</button>
+  <p id="cont" class="bubble" style="font-size:1.7rem">0 te amo enviados</p>
+</section>
+
+<section id="cupones">
+  <h2>Cupones de amor</h2>
+  <p class="sub">Son tuyos. Toca uno para canjearlo y avísame.</p>
+  <div class="cup" id="cup"></div>
+</section>
+
+<section id="suya" class="t-c">
+  <h2>La canción que me recuerda a ti</h2>
+  <p class="sub" style="margin-inline:auto">Sé que te gusta. A mí poco a poco también, de tanto escucharla contigo. Ahora cada vez que suena, pienso en ti.</p>
+  <div class="glass"><iframe class="yt" title="Canción en YouTube" src="https://www.youtube.com/embed/FyS5dAywkEo" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+</section>
+
+<section id="enojo" class="t-c">
+  <h2>Algo que quiero decirte</h2>
+  <button class="btn" id="porque">¿Por qué?</button>
+  <div class="glass carta-enojo" id="porque-txt" style="display:none;margin-top:1.2rem"><p>A veces me enojo, y me da pena. Perdóname. Tal vez no sea como Jungkook, pero intento ser yo mismo, y ese yo mismo te ama mucho, Dahlia.</p></div>
+</section>
+
+<section id="poemas" class="t-c">
+  <h2>Poemas para ti</h2>
+  <p class="sub" style="margin-inline:auto">Escritos pensando en ti.</p>
+  <div class="glass"><div class="poema" id="poema"></div><button class="btn" id="otro">Otro poema</button></div>
+</section>
+
 <section id="logros">
   <h2>Logros desbloqueados</h2>
-  <p class="sub">Seis cosas que me hacen quererte más. Toca cada logro para desbloquearlo.</p>
+  <p class="sub">Seis cosas que me hacen quererte más. Están tapados: toca cada uno para destaparlo.</p>
   <div class="ach" id="ach"></div>
   <p class="prog" id="prog">0 de 6 desbloqueados</p>
 </section>
 
 <section id="carta">
   <h2>Una carta para ti</h2>
-  <p class="sub" style="margin-inline:auto">Ábrela cuando estés tranquila.</p>
+  <p class="sub" style="margin-inline:auto">Ábrela.</p>
   <button id="sobre" aria-label="Abrir la carta">💌</button>
   <div id="papel"></div>
 </section>
@@ -124,15 +224,15 @@ footer{text-align:center;padding:2rem;color:var(--lav)}
   <p id="fin">Gracias por ser mi persona favorita. Te amo. 💖</p>
 </section>
 
-<footer>Hecho con amor para ti · 19 de noviembre de 2026</footer>
+<footer>De Marcos para Dahlia, con todo mi amor · 19 de noviembre de 2026</footer>
 
 <dialog id="lb"><img id="lbi" alt=""><p id="lbc"></p><button class="btn" onclick="lb.close()">Cerrar</button></dialog>
 
 <script>
 /* ====== EDITA AQUÍ ====== */
-const HER = "mi amor";                        // su nombre o apodo
-const ME  = "Tu nombre";                      // tu nombre (firma de la carta)
-const START = new Date(2026, 1, 19, 0, 0, 0); // 19 feb 2026 (el mes va de 0 a 11)
+const HER = "Dahlia";                        // su nombre o apodo
+const ME  = "Marcos";                      // tu nombre (firma de la carta)
+const START = new Date(2026, 3, 19, 0, 0, 0); // 19 abril 2026: cuando se conocieron (el mes va de 0 a 11)
 
 // Agrega aquí las 2 fotos que faltan: pon los archivos en /images con estos nombres
 const FOTOS = [
@@ -150,18 +250,18 @@ const LOGROS = [
   ["Paciencia nivel máximo","Gracias por aguantarme, por escucharme y por quedarte."],
   ["Mi lugar tranquilo","Contigo todo se siente en calma, como una siesta."],
   ["Hacemos equipo","No importa el mapa ni el reto: juntos salimos."],
-  ["9 meses y contando","Y quiero que este contador nunca llegue a su fin."]
+  ["7 meses y contando","Y quiero que este contador nunca llegue a su fin."]
 ];
 
-const CARTA = `Para ${HER}:
+const CARTA = `Para ${HER}, mi niña bonita:
 
-Hoy cumplimos 9 meses y quería regalarte algo hecho con mis manos, porque tú te mereces cosas hechas con cariño.
+Estamos cumpliendo 7 meses y quería regalarte algo hecho con mis manos, porque tú te mereces cosas hechas con cariño.
 
 Gracias por cada risa, por cada partida y por cada conversación a cualquier hora. Contigo hasta lo simple se vuelve especial.
 
 No sé qué nos espera, pero sé que quiero vivirlo contigo.
 
-Te amo muchísimo.
+Te amo muchísimo, mucho más de lo que sé decir.
 
 Con todo mi corazón,
 ${ME}`;
@@ -204,7 +304,7 @@ lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
 const ach = $("ach"); let abiertos = 0;
 LOGROS.forEach(([t, d]) => {
   const c = document.createElement("button"); c.className = "card";
-  c.innerHTML = `<div class="t">🏆 ${t}</div><div class="lock" style="color:var(--lav)">Toca para desbloquear</div><div class="d">${d}</div>`;
+  c.innerHTML = `<div class="lock" style="font-weight:700;font-size:1.15rem">🔒 Logro secreto</div><div class="lock" style="color:var(--lav)">Toca para destapar</div><div class="t">🏆 ${t}</div><div class="d">${d}</div>`;
   c.onclick = () => {
     if (c.classList.contains("on")) return;
     c.classList.add("on"); abiertos++;
@@ -232,6 +332,76 @@ no.addEventListener("mouseenter", huir);
 no.addEventListener("touchstart", e => { e.preventDefault(); huir(); }, {passive:false});
 no.addEventListener("click", huir);
 $("si").onclick = () => { $("fin").style.display = "block"; no.style.display = "none"; lluvia(40); };
+
+
+// ---- Historia (cada toque muestra lo siguiente) ----
+const HOY = Date.now() < new Date(2026,10,19) ? "Mañana" : "Hoy";
+const HISTORIA = [
+  ["19 de abril de 2026","Nos conocimos","Ese día empezó todo, aunque todavía no lo sabíamos."],
+  ["Duelos, risas y recuerdos","Lo que vivimos jugando","Aunque actualmente odio ese juego, gracias a él nos conocimos y estoy muy agradecido con el universo."],
+  ["19 de noviembre de 2026","7 meses",(HOY==="Mañana"?"❤️ 6 meses y 30 días. ¡Mañana cumplimos 7 meses! 🥹💕":"❤️ ¡Hoy cumplimos 7 meses! 🥹💕")]
+];
+const els = HISTORIA.map(([f,t,d],i)=>{
+  const e=document.createElement("div"); e.style.cssText="cursor:pointer;display:"+(i?"none":"block");
+  e.innerHTML=`<small>${f}</small><b>${t}</b><p style="color:var(--butter)">${d}</p><small class="nx">${i<HISTORIA.length-1?"Toca para seguir ↓":"💗"}</small>`;
+  e.onclick=()=>{const n=els[i+1]; if(n&&n.style.display==="none"){n.style.display="block";e.querySelector(".nx").remove();n.scrollIntoView({behavior:"smooth",block:"center"});lluvia(4)}};
+  $("tl").appendChild(e); return e;
+});
+
+// ---- Mensajes ----
+const BONITOS=["Contigo todo es más bonito, Dahlia.","Me encanta cómo te ríes.","Eres lo mejor que me pasó este año.","Gracias por quedarte conmigo, incluso cuando soy difícil.","Cuando pienso en ti, sonrío solo.","Cada que veo algo, te recuerdo.","Contigo aprendí que el hogar también puede ser una persona.","Si esto fuera un anime, tú serías la protagonista y yo el que corre a tu lado hasta el final.","Eres mi persona favorita en cualquier universo y siempre.","Quiero verte feliz, y si puedo ser parte de eso, ya gané.","Te elegiría en cada vida, en cada partida y en cada vida.","No importan los demás mientras esté contigo.","Te amo mucho, como no tienes idea, te amo Dahlia."];
+let ib=0,tw;
+function escribir(t){clearInterval(tw);let i=0;$("bub").textContent="";tw=setInterval(()=>{$("bub").textContent=t.slice(0,++i);if(i>=t.length)clearInterval(tw)},35)}
+$("bonito").onclick=()=>{escribir(BONITOS[ib++%BONITOS.length]);lluvia(6)};
+let nivel=0;
+const NIV=[["10 %","Todavía poquito… sigue tocando"],["40 %","Esto apenas comienza"],["75 %","Ya casi no me cabe en el pecho"],["100 %","Se llenó, pero sigue creciendo"],["∞","Infinito. Te amo sin límite 💖"]];
+$("cuanto").onclick=()=>{const[n,t]=NIV[Math.min(nivel++,NIV.length-1)];$("barra").style.width=nivel>=NIV.length?"100%":n;$("bartxt").textContent=t;if(nivel===NIV.length)lluvia(30)};
+
+// ---- Corazón ----
+let te=0;const HITOS={10:"Diez, apenas calentando 😳",25:"Veinticinco y no paro 💕",50:"Cincuenta te amo, Dahlia 💖",100:"Cien. Ya sabes cuánto te amo 💘"};
+let lastT=0,dbl=false;
+$("corazon").onclick=()=>{te++;const n=Date.now();
+  if(n-lastT<450&&!dbl){dbl=true;$("corazon").disabled=true;$("cont").textContent="Te amo demasiado, no se puede contar cuánto 💖∞";lluvia(40)}
+  else{dbl=false;$("cont").textContent=HITOS[te]||`${te} te amo enviados`;if(HITOS[te])lluvia(18)}
+  lastT=n};
+
+// ---- Cupones ----
+[["Un beso largo","válido en cualquier momento"],["Una noche de películas","tú eliges la peli"],["Una partida de lo que quieras","sin quejarme, lo prometo"],["Un regalo que tú elijas","y sí, lo voy a comprar 🎁"],["Un “te amo” extra","canjeable las veces que pidas"],["Una cita pendiente","yo organizo todo"]].forEach(([t,d])=>{
+  const b=document.createElement("button");b.innerHTML=`🎟️ ${t}<small>${d}</small>`;
+  b.onclick=()=>{b.classList.toggle("used");if(b.classList.contains("used"))lluvia(8)};
+  $("cup").appendChild(b);
+});
+
+
+// ---- Música de fondo (lista de canciones, volumen bajito) ----
+const CANCIONES=["music/cancion.mp3","music/cancion2.mp3","music/cancion3.mp3","music/cancion4.mp3"]; // pon aquí los nombres de tus mp3
+const bg=$("bg");let ic=0,fallos=0;bg.volume=.15;
+function cargar(){bg.src=CANCIONES[ic%CANCIONES.length];bg.play().catch(()=>{})}
+bg.addEventListener("ended",()=>{ic++;cargar()});
+bg.addEventListener("playing",()=>{fallos=0;$("pp").textContent="⏸️"});
+bg.addEventListener("pause",()=>{$("pp").textContent="▶️"});
+bg.addEventListener("error",()=>{if(++fallos<CANCIONES.length){ic++;cargar()}});
+$("entrar").onclick=()=>{$("intro").style.display="none";cargar()};
+$("pp").onclick=()=>{bg.paused?bg.play().catch(()=>{}):bg.pause()};
+$("sig").onclick=()=>{ic++;cargar()};
+$("vol").oninput=e=>{bg.volume=e.target.value};
+$("porque").onclick=()=>{$("porque").style.display="none";$("porque-txt").style.display="block";lluvia(10)};
+
+// ---- Corazones y flores de fondo ----
+const FL=["💖","💗","💕","🌸","✨","💘","🦋","🌷"],fl=document.createElement("div");fl.className="fl";fl.setAttribute("aria-hidden","true");
+for(let i=0;i<22;i++){const e=document.createElement("span");e.textContent=FL[i%FL.length];e.style.cssText=`left:${Math.random()*100}%;font-size:${16+Math.random()*26}px;--d:${12+Math.random()*14}s;--l:-${Math.random()*20}s`;fl.appendChild(e)}
+document.body.prepend(fl);
+
+// ---- Poemas ----
+const POEMAS=["No prometo ser perfecto,
+prometo quedarme a intentarlo.
+Cada día un poquito mejor,
+cada día un poquito más tuyo.","Siete meses y un universo
+que me puso en tu camino.
+Si volviera a empezar,
+te elegiría igual, Dahlia, en cada destino."];
+let ip=0;function poema(){$("poema").textContent=POEMAS[ip++%POEMAS.length]}
+poema();$("otro").onclick=poema;
 
 // Lluvia de corazones
 function lluvia(n) {
